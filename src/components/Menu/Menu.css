@@ -67,9 +67,11 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: var(--primary);
+      color: var(--launchAecio);
+      background: var(--black);
       border-radius: 0;
       border: 0;
       text-align: center;
+      /*border-top: 2px solid var(--launchAecio);*/
     }
   }
