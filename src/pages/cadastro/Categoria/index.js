@@ -21,10 +21,9 @@ function CadastroCategoria(){
     }
 
     function handleChange(event){
-      const { getAttribute, value } = event
       setValue(
-        getAttribute('name'),
-        value
+        event.target.getAttribute('name'),
+        event.target.value
       );
     }
 
@@ -42,34 +41,29 @@ function CadastroCategoria(){
           setValues(valoresIniciais)
         }}>
           
-          <FormField 
+          <FormField
+            label="Nome da Categoria"
+            type="text"
             value={values.nome}
+            name="nome"
             onChange={handleChange}
           />
 
-          <div>            
-            <label>
-              Descrição:
-              <textarea
-                type="text"
-                value={values.descricao}
-                name="descricao"
-                onChange={handleChange}
-              />
-            </label>
-          </div>
-
-          <div>
-            <label>
-              Cor:
-              <input 
-                type="color"
-                value={values.cor}
-                name="cor"
-                onChange={handleChange}
-              />
-            </label>
-          </div>
+          <FormField
+            label="Descrição"
+            type="textarea"
+            value={values.descricao}
+            name="descricao"
+            onChange={handleChange}
+          />
+          
+          <FormField
+            label="Cor"
+            type="color"
+            value={values.cor}
+            name="cor"
+            onChange={handleChange}
+          />         
 
           <button>
             Cadastrar
